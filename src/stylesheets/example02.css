@@ -1,1 +1,81 @@
 /* TODO: Example 02 (Activity 3) CSS goes here */
+
+html{
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    background: #fffdf5;
+}
+
+*, ::before, :after{
+    box-sizing: inherit;
+}
+
+nav{
+    border-bottom: 1px solid #9c6e79;
+    padding: 1.5rem;
+}
+
+
+nav > ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav > ul > li {
+    margin: 0;
+    display: inline-block;
+    margin-right: .5rem;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+.clearfix::after(){
+    content: "";
+    clear: both;
+    display: table;
+}
+
+nav a:link, nav a:visited, nav a:active {
+    text-decoration: none;
+    color: #6f2a45;
+}
+
+nav a:hover {
+    text-decoration: none;
+    color: #ffc0cb;
+}
+
+footer{
+    margin: 2em .5rem;
+    padding: .5rem;
+    border-top: 1px solid #9c6e79;  
+}
+
+img {
+    width: 150%;
+    max-width: 300px;
+    border: 1px solid #7597a8;
+    border-radius: 10px;
+    margin: .75rem;
+}
+
+.container {
+    margin: 0 auto;
+    width: 80%;
+    counter-reset: article; /*Set a counter named article and its initial value is 0*/
+}
+
+article > h1::before{
+    counter-increment: article; /*Increase the calue of article by 1*/
+    content: "Article " counter(article) ":"; /*DIsplay the word "article", the value of the article counter,
+    and a colon before the conent of each h1*/
+    color: #6f2a45;
+}
